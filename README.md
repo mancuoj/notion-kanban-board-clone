@@ -1,9 +1,15 @@
-# React Stater
+# Trello clone
 
-Personal use to learn react, eslint config from @antfu.
+Just for learning React & Tailwind CSS.
+
+- [x] basic function
+- [ ] basic styles
+- [ ] cols dnd
+- [ ] add cards & cols
+
+## Usage
 
 ```shell
-degit mancuoj/react-starter <app-name>
 npm i
 npm start
 npm run build
