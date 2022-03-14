@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { BsPlusLg } from 'react-icons/bs'
+import { AiOutlineInbox } from 'react-icons/ai'
 import { columnsData } from '../data'
 import Column from './Column'
 
@@ -49,11 +50,14 @@ const Board = () => {
     <DragDropContext onDragEnd={res => onDragEnd(res, cols, setCols)}>
       {Object.entries(cols).map(([colId, col]) => {
         return (
-          <div key={colId} className="container rounded-md bg-gray-50 p-3 m-4">
-            <button className="bg-red-100 p-1 rounded text-xs" > {col.name} </button>
+          <div key={colId} className={`container rounded-md shadow-md ${col.color} bg-opacity-20 p-3 m-4`}>
+            <div className="flex items-center">
+              {col.name === 'No status' && <AiOutlineInbox className="w-4 h-4" />}
+              <button className={`${col.color} p-1 rounded text-xs`}> {col.name} </button>
+            </div>
             <Column colId={colId} col={col} />
-            <button className="flex items-center hover:bg-gray-200 w-full rounded-md p-3 my-2 ">
-              <BsPlusLg className="w-5 h-5 mr-2" />
+            <button className="flex items-center hover:bg-gray-200 w-full rounded-md p-3 my-2">
+              <BsPlusLg className="w-3 h-3 mr-1" />
               <span>New</span>
             </button>
           </div>
