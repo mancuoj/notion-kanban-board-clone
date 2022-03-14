@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
+import { BsPlusLg } from 'react-icons/bs'
 import { columnsData } from '../data'
 import Column from './Column'
 
@@ -42,15 +43,19 @@ const onDragEnd = (res, cols, setCols) => {
 }
 
 const Board = () => {
-  const [cols, setCols] = useState (columnsData)
+  const [cols, setCols] = useState(columnsData)
 
   return (
     <DragDropContext onDragEnd={res => onDragEnd(res, cols, setCols)}>
       {Object.entries(cols).map(([colId, col]) => {
         return (
-          <div key={colId} className="col-container">
-            <h2> {col.name} </h2>
+          <div key={colId} className="container rounded-md bg-gray-50 p-3 m-4">
+            <button className="bg-red-100 p-1 rounded text-xs" > {col.name} </button>
             <Column colId={colId} col={col} />
+            <button className="flex items-center hover:bg-gray-200 w-full rounded-md p-3 my-2 ">
+              <BsPlusLg className="w-5 h-5 mr-2" />
+              <span>New</span>
+            </button>
           </div>
         )
       })}

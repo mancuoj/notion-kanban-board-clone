@@ -4,25 +4,23 @@ const itemsData = [
   { id: uuid(), content: 'First task' },
   { id: uuid(), content: 'Second task' },
   { id: uuid(), content: 'Third task' },
-  { id: uuid(), content: 'Fourth task' },
-  { id: uuid(), content: 'Fifth task' },
 ]
 
 export const columnsData = {
   [uuid()]: {
-    name: 'Requested',
+    name: 'Not started',
     items: itemsData,
   },
   [uuid()]: {
-    name: 'To do',
+    name: 'In progress',
     items: [],
   },
   [uuid()]: {
-    name: 'In Progress',
+    name: 'Completed',
     items: [],
   },
   [uuid()]: {
-    name: 'Done',
+    name: 'No status',
     items: [],
   },
 }

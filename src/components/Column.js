@@ -8,7 +8,7 @@ const Column = ({ colId, col }) => {
       {(provided, snapshot) => {
         return (
           <div
-            className= {snapshot.isDraggingOver ? 'col-list' : 'col-list drag'}
+            className= {`${snapshot.isDraggingOver && 'bg-blue-100'}`}
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
