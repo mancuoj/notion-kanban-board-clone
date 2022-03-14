@@ -13,8 +13,8 @@ export const columnsData = {
   [uuid()]: {
     name: 'In progress',
     items: [
-      { id: uuid(), content: 'First task' },
-      { id: uuid(), content: 'Second task' },
+      { id: uuid(), content: 'Fourth task' },
+      { id: uuid(), content: 'Fifth task' },
     ],
     color: 'bg-purple-100',
   },

@@ -50,10 +50,10 @@ const Board = () => {
     <DragDropContext onDragEnd={res => onDragEnd(res, cols, setCols)}>
       {Object.entries(cols).map(([colId, col]) => {
         return (
-          <div key={colId} className={`container rounded-md shadow-md ${col.color} bg-opacity-20 p-3 m-4`}>
+          <div key={colId} className={`container rounded-md shadow-md ${col.color} bg-opacity-20 p-3 m-4 h-1/2`}>
             <div className="flex items-center">
               {col.name === 'No status' && <AiOutlineInbox className="w-4 h-4" />}
-              <button className={`${col.color} p-1 rounded text-xs`}> {col.name} </button>
+              <button className={`${col.color} p-1 rounded text-xs hover:bg-gray-200`}> {col.name} </button>
             </div>
             <Column colId={colId} col={col} />
             <button className="flex items-center hover:bg-gray-200 w-full rounded-md p-3 my-2">
